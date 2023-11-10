@@ -1,11 +1,8 @@
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('test2.db');
+const db = new sqlite3.Database('test.db');
 
 let sql = `
-select student.id, student.name, school.name as name2  
-from student inner join school 
-on student.school_id=school.id
-;
+select * from example;
 `
 
 db.serialize( () => {

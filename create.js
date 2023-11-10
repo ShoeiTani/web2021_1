@@ -2,9 +2,11 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('test2.db');
 
 let schema = `
-create table school(
+create table 都道府県(
   id integer primary key,
-  name text not null
+  name text not null,
+  人口 integer not null
+);
 );
 `
 

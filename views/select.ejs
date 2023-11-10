@@ -7,10 +7,11 @@
 <body>
   <h2>都道府県ごとの人口</h2>
   <table>
+    <td><a href=/public/insert.html>insert</a></td>
       <% for( let row of data ) { %>
         <tr>
             <td><%= row.id %></td>
-            <td><%= row.都道府県 %></td>
+            <td><a href="db/<%= row.id %>"><%= row.都道府県 %></a></td>
             <td><%= row.人口 %></td>
         </tr>
       <% } %>
