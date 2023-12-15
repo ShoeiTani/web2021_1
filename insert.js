@@ -1,8 +1,14 @@
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('test2.db');
+const db = new sqlite3.Database('main.db');
 
 let sql = `
-insert into school ("name") values ("JIT");
+insert into player(name,height,weight,team_id,position_id) 
+values 
+("Derrick White",193,86,2,1),
+("Jaylen Brown",198,101,2,2),
+("Jason Tatum",203,95,2,3),
+("Al Horford",206,109,2,4),
+("Robert Williams",206,113,2,5);
 `
 
 db.serialize( () => {

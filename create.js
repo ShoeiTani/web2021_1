@@ -1,11 +1,10 @@
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('test2.db');
+const db = new sqlite3.Database('main.db');
 
 let schema = `
-create table 都道府県(
-  id integer primary key,
-  name text not null,
-  人口 integer not null
+create table position(
+  id integer primary key autoincrement,
+  position text not null
 );
 );
 `

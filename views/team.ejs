@@ -1,0 +1,22 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Show message</title>
+</head>
+<body>
+<h2><%= data[0].team %></h2>
+  <table>
+    <% for( let row of data ) { %>
+    <tr><td>name</td><td><%= row.name %></td></tr>
+    <tr><td>conference</td><td><%= row.conference %></td></tr>
+    <tr><td>rank</td><td><%= row.rank %></td></tr>
+    <tr><td>win</td><td><%= row.win %></td></tr>
+    <tr><td>lose</td><td><%= row.lose %></td></tr>
+    
+    <td><a href="/">Home</a></td>
+  <% } %>
+
+  </table>
+</body>
+</html>
