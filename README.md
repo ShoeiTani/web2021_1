@@ -1,12 +1,12 @@
-# web2021_1
+# webapp
 
-2021年度の授業用リポジトリ
+2023年度の授業用リポジトリ
 
 ## ファイル一覧
 
 ファイル名/ディレクトリ名 | 役割
 -|-
-app.js | expressによるHello world
+app.js | NBA Team List
 public | 静的なページデータ
 views | テンプレートファイル
 create.js | テーブルを登録するサンプル
