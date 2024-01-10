@@ -5,16 +5,13 @@
 <title>player</title>
 </head>
 <body>
-<h2><%= data.team %></h2>
+<%= data.player %>
+<h2><%= data[0].name %></h2>
   <table>
-    <tr><td>name</td><td><%= data[0].name %></td></tr>
-    <tr><td>height</td><td><%= data[0].height %></td></tr>
-    <tr><td>weight</td><td><%= data[0].weight %></td></tr>
-    <tr><td><a href="team/<%= row.team_id %>"><%= row.team_name %></a></td></tr>
-    <tr><td>position</td><td><%= data[0].position %></td></tr>
-    <% for( let row of data ) { %>
-      <tr><td><a href="player/<%= row.player_id %>"><%= row.player_name %></a></td></tr>
-    <% } %>
+    <tr><td>Height</td><td><%= data[0].height %> cm</td></tr>
+    <tr><td>Weight</td><td><%= data[0].weight %> kg</td></tr>
+    <tr><td>Team</td><td><a href="/team/<%= data[0].team_id %>"><%= data[0].team_name %></a></td></tr>
+    <tr><td>Position</td><td><%= data[0].position %></td></tr>
     <td><a href="/">Home</a></td>
   </table>
 </body>

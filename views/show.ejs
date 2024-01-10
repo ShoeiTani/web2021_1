@@ -7,14 +7,38 @@
 <body>
 <h2>Teams</h2>
 <table>
+  <a href="/public/insert.html">insert</a><br>
+  <form action="/" method="get">
+    <p>Sort By<br>
+     <div>
+      <input type="radio" name="sortBy" value="Default">Default
+      <input type="radio" name="sortBy" value="Rank">Rank
+      <input type="radio" name="sortBy" value="Name">Name
+      <input type="radio" name="sortBy" value="WinningRate">Winning rate<br>
+      <input type="radio" name="sortOrder" value="desc">Decending Order
+      <input type="radio" name="sortOrder" value="asc">Ascending Order
+     </div>
+    </p>
+    <p><input type="submit" value="apply"></p>
+  </form>
+    
   <% for( let row of data ) { %>
     <tr>
-      <td><a href="team/<%= row.id %>"><%= row.name %></a></td>
+      <td><%= row.rank %></td>
+      <td><a href="/team/<%= row.id %>"><%= row.name %></a></td>
       <td><%= row.name2 %></td>
+      <td><%= (row.win/0.82).toFixed(1) %>%</td>
     </tr>
   <% } %>
-  
 </table>
-
+  
+<form action="/search" method="get">
+  <p>search<br>
+    <input type="radio" name="searchFrom" value="Team">Team
+    <input type="radio" name="searchFrom" value="Player">Player<br>
+    <input type="textbox" name="searchName">
+  <p><input type="submit" value="search"></p>
+</form>
+    
 </body>
 </html>

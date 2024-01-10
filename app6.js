@@ -27,7 +27,7 @@ app.get("/db", (req, res) => {
 app.get("/top", (req, res) => {
     //console.log(req.query.pop);    // ①
     let desc = "";
-    if( req.query.desc ) desc = " desc";
+    if( req.query.sortBy == "Default")  = " desc";
     let sql = "select id, 都道府県, 人口 from example order by 人口" + desc + " limit " + req.query.pop + ";";
     //console.log(sql);    // ②
     db.serialize( () => {
@@ -57,15 +57,16 @@ app.post("/insert", (req, res) => {
   console.log(sql);
   db.serialize( () => {
   db.run( sql, (error, row) => {
-  console.log(error);
-  if(error) {
-  res.render('show', {mes:"エラーです"});
-  }
-  res.redirect('/db');
-  });
+    console.log(error);
+    if(error) {
+        res.render('show', {mes:"エラーです"});
+    }
+    res.redirect('/db');
+    });
   });
   console.log(req.body);
-  });
+});
+
 app.use(function(req, res, next) {
   res.status(404).send('ページが見つかりません');
 });

@@ -5,17 +5,20 @@
 <title>Show message</title>
 </head>
 <body>
-<h2><%= data.team %></h2>
+<%= data.team %>
+  <h2><%= data[0].name %></h2>
   <table>
-    <tr><td>name</td><td><%= data[0].name %></td></tr>
-    <tr><td>conference</td><td><%= data[0].conference %></td></tr>
-    <tr><td>rank</td><td><%= data[0].rank %></td></tr>
-    <tr><td>win</td><td><%= data[0].win %></td></tr>
-    <tr><td>lose</td><td><%= data[0].lose %></td></tr>
+  <tr><td><%= data[0].conference %> Conference</td></tr>
+    <tr><td>Rank</td><td><%= data[0].rank %></td></tr>
+    <tr><td>Winning Rate</td><td><%= (data[0].win/0.82).toFixed(1) %>%</td></tr>
+    <tr><td>Win</td><td><%= data[0].win %></td></tr>
+    <tr><td>Lose</td><td><%= data[0].lose %></td></tr>
+    <tr><td>member</td>
+  
     <% for( let row of data ) { %>
-      <tr><td><a href="player/<%= row.player_id %>"><%= row.player_name %></a></td></tr>
+      <tr><td><a href="/player/<%= row.player_id %>"><%= row.player_name %></a></td></tr>
     <% } %>
-    <td><a href="/">Home</a></td>
   </table>
+  <a href="/">Home</a>
 </body>
 </html>

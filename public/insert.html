@@ -6,14 +6,20 @@
 <body>
 <h2>新規データ登録</h2>
 <form action="/insert" method="post">
-<p>都道府県名<br>
-<input type="text" name="name"></p>
-<p>人口<br>
-<input type="number" name="jinko"></p>
-<p>大学数<br>
-<input type="number" name="daigaku"></p>
+  
+  <p>name<br>
+  <input type="text" name="name"></p>
+  <p>height<br>
+  <input type="number" name="height"></p>
+  <p>weight<br>
+  <input type="number" name="weight"></p>
+  <p>team_id<br>
+  <input type="number" name="team_id"></p>
+  <p>position_id<br>
+  <input type="number" name="position_id"></p>
+   
 <input type="submit" value="登録">
 </form>
-<td><a href="/db">Home</a></td>
+<td><a href="/">Home</a></td>
 </body>
 </html>
